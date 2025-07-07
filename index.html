@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tela de Log-In</title>
+    <link rel="stylesheet" href="estilo.css">
+        
+    
+        <script ValidacaoLogin>
+            //Script de Validação de Dados Inseridos//
+            function ValidacaoLogin() {
+                var Email = document.getElementById('Email').value;
+                var Senha = document.getElementById('Senha').value;
+                
+                // Verifica se usuário e senha estão corretos//
+                if (Email === 'admin' && Senha === 'admin') {
+                    window.location.href = "Logado Com Sucesso.html";
+                    return true;
+                }
+
+                // Verifica se os campos estão vazios//
+                if (Email === '' && Senha === '') {
+                    alert('Por favor, preencha todos os campos.');
+                    return false;
+                }                   
+
+                // Se não for nenhum dos casos acima, login está incorreto//
+                else (Email != 'admin' && Senha != 'admin');{ 
+                    alert('Usuário e senha incorretos.');
+                    return false;}               
+            }           
+        </script>
+
+        <script CriarConta>
+            //Redirecionamento para a Area de Cadastro//
+            function CriarConta()
+            {
+                window.location.href = "Cadastro.html";
+        }
+        </script>    
+            
+</head>
+
+<body>
+    <!-- Formulario onde serão inseridos os dados de Log-In -->
+    <div class="Base">
+        <h1 class="Login">Faça seu Login</h1>
+        <input type="text" id="Email" placeholder="E-Mail">
+        <br><br>
+        <input type="password" id="Senha" placeholder="Senha">
+        <br><br>
+        
+            <button onclick="return ValidacaoLogin()">Entrar</button>
+            <br> <br>
+            <button onclick="return CriarConta()">Criar Conta</button>
+    </div>
+
+</body>
+</html>

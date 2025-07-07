@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="estilo.css">
+
+    <script>
+        //Script de validação de cadastro, utilizando nome, email e confirmação de senhas.//
+        function ValidarCadastro() {
+            var nome = document.getElementById('nome').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var senha = document.getElementById('senha').value;
+            var senhanovamente = document.getElementById('senhanovamente').value;
+        
+            // Verifica se algum campo está vazio
+            if (nome === '' || email === '' || senha === '' || senhanovamente === '') {
+                alert('Por favor, preencha todos os campos.');
+                return false;
+            }
+        
+            // Verifica se as senhas coincidem
+            if (senha !== senhanovamente) {
+                alert('As senhas não coincidem.');
+                return false;
+            }
+        
+            // Validação e redirecionamento
+            window.location.href = "Finalização De Cadastro.html";
+            return true;
+        }
+        </script>
+</head>
+
+<body>
+    <!-- Formulario onde serão inseridos os dados de Cadastro -->
+    <div class="Base">
+        <h1 class="Cadastro">Cadastro</h1>
+        <br>
+        <input type="text" id="nome" placeholder="Nome:">
+        <br><br>
+        <input type="text" id="email" placeholder="E-Mail:">
+        <br><br>
+        <input type="password" id="senha" placeholder="Senha:">
+        <br><br>
+        <input type="password" id="senhanovamente" placeholder="Senha Novamente:">
+        <br><br>
+        <button onclick="return ValidarCadastro()">Enviar</button>
+    </div>
+    
+</body>
+</html>
